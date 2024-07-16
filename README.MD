@@ -27,7 +27,7 @@ expand if needed.
 
 You'll work with multiple files in this exercise:
 * `vector.h` the header file for the vector, this is read-only, please don't modify it.
-* `vector.c` the implementation file for the vector, this is where you'll work.
+* `vector.c` the implementation file for the vector, this is where you'll work (you should create this file).
 * `main.c` the main entry point for the application containing mostly tests. You can add more tests if you'd like to, but please don't modify the existing ones.
 
 In `vector.h` you'll see documentation for each function. Your implementation should respect the documentation!
@@ -53,7 +53,7 @@ Some exercises award bonus points, make sure to collect them!
 There are side quests that apply to your whole solution. Failing some can result in point deductions, but completing
 others will award you extra points!
 
-#### Three-headed kittens take over the Earth (-???)
+#### Nuclear catastrophe (-???)
 
 For each instance of undefined behaviour in your code, you lose 2 points. During the defense of your solution, you'll have 
 the chance to correct these. If you successfully correct one, you only lose 1 point for that.
@@ -102,23 +102,4 @@ Yes, you can modify the header file for this.
 * 3: 40p - 48p
 * 4: 49p - 53p
 * 5: 54p -
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
