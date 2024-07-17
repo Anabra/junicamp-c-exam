@@ -94,117 +94,117 @@ void test_get() {
   print_tests_passed("get");
 }
 
-// void test_push_back() {
-//   int arr[] = {};
-//   vector* v = mk_vector(arr, 0);
+void test_push_back() {
+  int arr[] = {};
+  vector* v = mk_vector(arr, 0);
 
-//   assert(v->capacity == 0);
-//   assert(v->num_elems == 0);
+  assert(v->capacity == 0);
+  assert(v->num_elems == 0);
 
-//   push_back(v, 0);
-//   assert(v->capacity == 1);
-//   assert(v->num_elems == 1);
-//   assert(v->elems[0] == 0);
+  push_back(v, 0);
+  assert(v->capacity == 1);
+  assert(v->num_elems == 1);
+  assert(v->elems[0] == 0);
 
-//   push_back(v, 1);
-//   assert(v->capacity == 2);
-//   assert(v->num_elems == 2);
-//   assert(v->elems[0] == 0);
-//   assert(v->elems[1] == 1);
+  push_back(v, 1);
+  assert(v->capacity == 2);
+  assert(v->num_elems == 2);
+  assert(v->elems[0] == 0);
+  assert(v->elems[1] == 1);
 
-//   push_back(v, 2);
-//   assert(v->capacity == 4);
-//   assert(v->num_elems == 3);
-//   assert(v->elems[0] == 0);
-//   assert(v->elems[1] == 1);
-//   assert(v->elems[2] == 2);
+  push_back(v, 2);
+  assert(v->capacity == 4);
+  assert(v->num_elems == 3);
+  assert(v->elems[0] == 0);
+  assert(v->elems[1] == 1);
+  assert(v->elems[2] == 2);
 
-//   push_back(v, 3);
-//   assert(v->capacity == 4);
-//   assert(v->num_elems == 4);
-//   assert(v->elems[0] == 0);
-//   assert(v->elems[1] == 1);
-//   assert(v->elems[2] == 2);
-//   assert(v->elems[3] == 3);
+  push_back(v, 3);
+  assert(v->capacity == 4);
+  assert(v->num_elems == 4);
+  assert(v->elems[0] == 0);
+  assert(v->elems[1] == 1);
+  assert(v->elems[2] == 2);
+  assert(v->elems[3] == 3);
 
-//   free_vector(v);
-//   print_tests_passed("push_back");
-// }
+  free_vector(v);
+  print_tests_passed("push_back");
+}
 
-// void test_push_front() {
-//   int arr[] = {};
-//   vector* v = mk_vector(arr, 0);
+void test_push_front() {
+  int arr[] = {};
+  vector* v = mk_vector(arr, 0);
 
-//   assert(v->capacity == 0);
-//   assert(v->num_elems == 0);
+  assert(v->capacity == 0);
+  assert(v->num_elems == 0);
 
-//   push_front(v, 0);
-//   assert(v->capacity == 1);
-//   assert(v->num_elems == 1);
-//   assert(v->elems[0] == 0);
+  push_front(v, 0);
+  assert(v->capacity == 1);
+  assert(v->num_elems == 1);
+  assert(v->elems[0] == 0);
 
-//   push_front(v, 1);
-//   assert(v->capacity == 2);
-//   assert(v->num_elems == 2);
-//   assert(v->elems[0] == 1);
-//   assert(v->elems[1] == 0);
+  push_front(v, 1);
+  assert(v->capacity == 2);
+  assert(v->num_elems == 2);
+  assert(v->elems[0] == 1);
+  assert(v->elems[1] == 0);
 
-//   push_front(v, 2);
-//   assert(v->capacity == 4);
-//   assert(v->num_elems == 3);
-//   assert(v->elems[0] == 2);
-//   assert(v->elems[1] == 1);
-//   assert(v->elems[2] == 0);
+  push_front(v, 2);
+  assert(v->capacity == 4);
+  assert(v->num_elems == 3);
+  assert(v->elems[0] == 2);
+  assert(v->elems[1] == 1);
+  assert(v->elems[2] == 0);
 
-//   push_front(v, 3);
-//   assert(v->capacity == 4);
-//   assert(v->num_elems == 4);
-//   assert(v->elems[0] == 3);
-//   assert(v->elems[1] == 2);
-//   assert(v->elems[2] == 1);
-//   assert(v->elems[3] == 0);
+  push_front(v, 3);
+  assert(v->capacity == 4);
+  assert(v->num_elems == 4);
+  assert(v->elems[0] == 3);
+  assert(v->elems[1] == 2);
+  assert(v->elems[2] == 1);
+  assert(v->elems[3] == 0);
 
-//   free_vector(v);
-//   print_tests_passed("push_front");
-// }
+  free_vector(v);
+  print_tests_passed("push_front");
+}
 
-// void test_insert_at() {
-//   int arr[] = {0, 1, 2};
-//   vector* v = mk_vector(arr, 3);
+void test_insert_at() {
+  int arr[] = {0, 1, 2};
+  vector* v = mk_vector(arr, 3);
 
-//   assert(v->capacity == 3);
-//   assert(v->num_elems == 3);
+  assert(v->capacity == 3);
+  assert(v->num_elems == 3);
 
-//   insert_at(v, 1, 5);
-//   assert(v->capacity == 6);
-//   assert(v->num_elems == 4);
-//   assert(v->elems[0] == 0);
-//   assert(v->elems[1] == 5);
-//   assert(v->elems[2] == 1);
-//   assert(v->elems[3] == 2);
+  insert_at(v, 1, 5);
+  assert(v->capacity == 6);
+  assert(v->num_elems == 4);
+  assert(v->elems[0] == 0);
+  assert(v->elems[1] == 5);
+  assert(v->elems[2] == 1);
+  assert(v->elems[3] == 2);
 
-//   insert_at(v, 0, 5);
-//   assert(v->capacity == 6);
-//   assert(v->num_elems == 5);
-//   assert(v->elems[0] == 5);
-//   assert(v->elems[1] == 0);
-//   assert(v->elems[2] == 5);
-//   assert(v->elems[3] == 1);
-//   assert(v->elems[4] == 2);
+  insert_at(v, 0, 5);
+  assert(v->capacity == 6);
+  assert(v->num_elems == 5);
+  assert(v->elems[0] == 5);
+  assert(v->elems[1] == 0);
+  assert(v->elems[2] == 5);
+  assert(v->elems[3] == 1);
+  assert(v->elems[4] == 2);
 
-//   insert_at(v, 5, 5);
-//   assert(v->capacity == 6);
-//   assert(v->num_elems == 6);
-//   assert(v->elems[0] == 5);
-//   assert(v->elems[1] == 0);
-//   assert(v->elems[2] == 5);
-//   assert(v->elems[3] == 1);
-//   assert(v->elems[4] == 2);
-//   assert(v->elems[5] == 5);
+  insert_at(v, 5, 5);
+  assert(v->capacity == 6);
+  assert(v->num_elems == 6);
+  assert(v->elems[0] == 5);
+  assert(v->elems[1] == 0);
+  assert(v->elems[2] == 5);
+  assert(v->elems[3] == 1);
+  assert(v->elems[4] == 2);
+  assert(v->elems[5] == 5);
 
-//   free_vector(v);
-//   print_tests_passed("insert_at");
-// }
+  free_vector(v);
+  print_tests_passed("insert_at");
+}
 
 // void test_remove_at() {
 //   int arr[] = {0, 1, 2, 3};
@@ -401,9 +401,9 @@ int main(void) {
   test_resize();
 
   test_get();
-  // test_push_back();
-  // test_push_front();
-  // test_insert_at();
+  test_push_back();
+  test_push_front();
+  test_insert_at();
   // test_remove_at();
 
   // test_begin();

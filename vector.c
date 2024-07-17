@@ -16,6 +16,10 @@
 //   size_t ix; // current index
 // } vector_iterator;
 
+void upscale_zero_element_vector(vector* v, int x);
+void print_capacity_error(size_t cur_capacity,size_t cur_num_elems);
+void insert_to_index_and_shift_vector(vector* v, int x, int index);
+
 // memory alloc success has not been checked yet.
 vector* mk_vector(int* p, size_t size)
 {
@@ -65,51 +69,102 @@ void push_back(vector* v, int x)
   if(cur_num_elems < cur_capacity)
   {
     v->elems[cur_num_elems] = x;
+    v->num_elems++;
   }
   else if (cur_capacity > 0 && cur_num_elems == cur_capacity)
   {
-    int* new_array = malloc(cur_capacity * 2 * sizeof(int));
-    memcpy(new_array, v->elems, cur_num_elems);
-    free(v->elems);
-    v->elems = new_array;
+    resize(v, cur_capacity * 2);
+    v->elems[cur_num_elems] = x;
     v->num_elems++;
-    v->capacity = cur_capacity * 2;
   }
   else if (cur_capacity == 0 && cur_num_elems == 0)
   {
-    int* array = malloc(2 * sizeof(int));
-    array[0] = x;  
-    v->capacity = 2;
-    v->num_elems = 1;
-    free(v->elems);
-    v->elems = array;
+    upscale_zero_element_vector(v, x);
   }
   else
   {
-    printf("Sth went wrong the cur_capacity is %li, and the cur_elem_num is %li, the function terminates.\n", cur_capacity, cur_num_elems);
+    print_capacity_error(cur_capacity, cur_num_elems);
   }
   return;
 }
 
-// // 3p
-// /**
-//   Inserts a new element at the front of the vector.
+void push_front(vector* v, int x)
+{
+  size_t cur_capacity = v->capacity;
+  size_t cur_num_elems = v->num_elems;
+  if(cur_num_elems < cur_capacity)
+  {
+    insert_to_index_and_shift_vector(v, x, 0);
+  }
+  else if (cur_capacity > 0 && cur_num_elems == cur_capacity)
+  {
+      resize(v, cur_capacity * 2);
+      insert_to_index_and_shift_vector(v, x, 0);
+  }
+  else if (cur_capacity == 0 && cur_num_elems == 0)
+  {
+    upscale_zero_element_vector(v, x);
+  }
+  else
+  {
+    print_capacity_error(cur_capacity, cur_num_elems);
+  }
+  return;
+}
 
-//   If the vector doesn't have enough capacity, it allocates more memory, copies the existing elements,
-//   and then inserts the new element. If the vector has capacity = 0, the new capacity will be 2, otherwise the new
-//   capacity should be twice as big as the original one.
-// */
-// void push_front(vector* v, int x);
+void upscale_zero_element_vector(vector* v, int x)
+{
+  int* array = malloc(sizeof(int));
+    array[0] = x;  
+    v->capacity = 1;
+    v->num_elems = 1;
+    free(v->elems);
+    v->elems = array;
+    return;
+}
 
-// // 5p
-// /**
-//   Inserts a new element at the the given index of the vector.
+void print_capacity_error(size_t cur_capacity, size_t cur_num_elems)
+{
+  printf("Sth went wrong the cur_capacity is %li, and the cur_num_elems is %li, the function terminates.\n", cur_capacity, cur_num_elems);
+}
 
-//   If the vector doesn't have enough capacity, it allocates more memory, copies the existing elements,
-//   and then inserts the new element. If the vector has capacity = 0, the new capacity will be 2, otherwise the new
-//   capacity should be the double of the original one.
-// */
-// void insert_at(vector* v, size_t ix, int elem);
+//over indexing defense has not been implemented
+void insert_at(vector* v, size_t ix, int elem)
+{
+  size_t cur_num_elems = v->num_elems;
+  size_t cur_capacity = v->capacity;
+  if (ix == 0)
+  {
+    push_front(v, elem);
+  }
+  else if (ix == cur_num_elems)
+  {
+    push_back(v, elem);
+  }
+  else if (cur_num_elems < cur_capacity)
+  {
+    insert_to_index_and_shift_vector(v, elem, ix);
+  }
+  else if (cur_num_elems == cur_capacity)
+  {
+    resize(v, cur_capacity * 2);
+    insert_to_index_and_shift_vector(v, elem, ix);
+  }
+  else
+  {
+    print_capacity_error(cur_capacity, cur_num_elems);
+  }
+
+}
+
+void insert_to_index_and_shift_vector(vector* v, int x, int index)
+{
+  size_t cur_num_elems = v->num_elems;
+  size_t elems_after_index = cur_num_elems - index;
+    memmove(&v->elems[index + 1], &v->elems[index], elems_after_index * sizeof(int));
+    v->elems[index] = x;
+    v->num_elems++;
+}
 
 // // 2p
 // /**
