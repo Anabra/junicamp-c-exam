@@ -53,6 +53,7 @@ The size of the table should be optimal (enough elements to avoid collisions but
 The structure of the table should be optimal (the less time it takes to reach an element the better)
 
 ## In general, which data structure would be faster to sort: an array or a linked list? Why? (2p)
+An array, as its elements are loaded into memory, so it does not hve to jump betweeen different locations of memory.
 
 ## What happens to unfreed memory when the program terminates? (1p)
 It leakes, which will result in less unused memory, and it can also fragment the unused parts.
