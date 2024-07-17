@@ -26,7 +26,7 @@ arr[2] = 2;
 
 ## Write a program that terminates due to a stack overflow! (2p)
 
-## What's the difference between `gets` and `get_s`? (1p)
+## What's the difference between `gets` and `gets_s`? (1p)
 
 ## How much memory can a 32-bit system have theoretically (if the smallest piece of addressable memory is 1 byte)? (1p)
 
