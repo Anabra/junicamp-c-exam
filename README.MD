@@ -82,9 +82,14 @@ out the standard about `memcpy`, sometimes it cannot be used!
 There's a function where you'd be tempted to use `memcpy`, but you cannot. Which function is this? What other standard 
 library function you can use to efficiently copy the data?
 
+- All functions that have an overlap in the dest and src arrays.
+- memmove is a suitale substitute
+
 #### Only change is constant (max +2p)
 
 There are a few functions where we could add `const` qualifiers to some pointers. Which ones are those?
+
+-sum, get elem, finished, next, remove at, 
 
 For an extra point: why don't we need to add `const` qualifiers to non-pointer function parameters?
 

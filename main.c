@@ -395,7 +395,7 @@ void test_equals() {
   print_tests_passed("equals");
 }
 
-int main(int argc, char** argv) {
+int main(void) {
   test_mk_vector();
   test_free_vector();
   test_resize();

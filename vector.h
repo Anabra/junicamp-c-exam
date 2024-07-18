@@ -51,7 +51,7 @@ int get(vector* v, size_t ix);
   Inserts a new element at the end of the vector.
 
   If the vector doesn't have enough capacity, it allocates more memory, copies the existing elements,
-  and then inserts the new element. If the vector has capacity = 0, the new capacity will be 2, otherwise the new
+  and then inserts the new element. If the vector has capacity = 0, the new capacity will be 1, otherwise the new
   capacity should be twice as big as the original one.
 */
 void push_back(vector* v, int x);
