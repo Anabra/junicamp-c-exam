@@ -44,7 +44,7 @@ void resize(vector* v, size_t new_capacity);
 /**
   Returns the element at a given index. If num_elems < ix, the behaviour is undefined.
 */
-int get(vector* v, size_t ix);
+int get(const vector* v, size_t ix);
 
 // 3p
 /**
@@ -112,7 +112,7 @@ int get_elem(vector_iterator it);
   Sums up the elements starting from where the iterator is pointing to, until the end of the vector.
   The iterator will point past the vector after the call.
 */
-long sum(vector_iterator* it);
+long sum(vector_iterator it);
 
 // 3p
 // +2p: use iterators instead of directly accessing lhs->elems and rhs->elems 

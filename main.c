@@ -338,14 +338,14 @@ void test_sum() {
 
   {
     vector_iterator it = begin(v);
-    assert(sum(&it) == 17);
+    assert(sum(it) == 17);
   }
 
   {
     vector_iterator it = begin(v);
     next(&it);
     next(&it);
-    assert(sum(&it) == 12);
+    assert(sum(it) == 12);
   }
 
   free_vector(v);

@@ -89,8 +89,6 @@ library function you can use to efficiently copy the data?
 
 There are a few functions where we could add `const` qualifiers to some pointers. Which ones are those?
 
--sum, get elem, finished, next, remove at, 
-
 For an extra point: why don't we need to add `const` qualifiers to non-pointer function parameters?
 
 #### The mathematician (max +3p)
