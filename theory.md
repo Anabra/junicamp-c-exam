@@ -7,7 +7,7 @@ Answer the below question in your own words in this file! The answers should be 
 It depends on the OS and the CPU, but in modern devices usually 4 bytes.
 
 ## What is the difference between the below two code snippets? (1p)
-The firt uses stack memory, and will be freed automatically when the fuction terminates, therefore the pointer to that array should not be used after that, while the second uses heap memory and it has to be freed manually when it is no longer needed.
+The first uses stack memory, and will be freed automatically when the fuction terminates, therefore the pointer to that array should not be used after that, while the second uses heap memory and it has to be freed manually when it is no longer needed, otherwise a memory leak could occur.
 
 Snippet 1:
 ```c
@@ -42,10 +42,10 @@ void foo(void)
 gets is vulnerable to buffer-owerflow attacks, as there is no bounds checking in it, therefore it was removed in C11 standard and can be replaced with gets_s, which has an additional parameter besides the pointer to the string: the maximum size of chars that will be written to the buffer.
 
 ## How much memory can a 32-bit system have theoretically (if the smallest piece of addressable memory is 1 byte)? (1p)
-2 ^32 = 4294967295 bytes, less than 4,3 GB, and more than 1 GiB
+2^32 = 4294967295 bytes, less than 4,3 GB, and more than 1 GiB
 
 ## How much memory can a 64-bit system have theoretically (if the smallest piece of addressable memory is 1 byte)? (1p)
-2 ^64 = 1.8446744e+19 bytes, which is more than 18.4 EB and more than 1 EiB
+2^64 = 1.8446744e+19 bytes, which is more than 18.4 EB and more than 1 EiB
 
 ## What properties does a hash table need to be performant? (2p)
 The hash algorithm should perform well (spread inputs evenly with minimal collisions)
