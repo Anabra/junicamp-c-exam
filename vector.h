@@ -44,14 +44,14 @@ void resize(vector* v, size_t new_capacity);
 /**
   Returns the element at a given index. If num_elems < ix, the behaviour is undefined.
 */
-int get(vector* v, size_t ix);
+int get(const vector* v, size_t ix);
 
 // 3p
 /**
   Inserts a new element at the end of the vector.
 
   If the vector doesn't have enough capacity, it allocates more memory, copies the existing elements,
-  and then inserts the new element. If the vector has capacity = 0, the new capacity will be 2, otherwise the new
+  and then inserts the new element. If the vector has capacity = 0, the new capacity will be 1, otherwise the new
   capacity should be twice as big as the original one.
 */
 void push_back(vector* v, int x);
@@ -112,7 +112,7 @@ int get_elem(vector_iterator it);
   Sums up the elements starting from where the iterator is pointing to, until the end of the vector.
   The iterator will point past the vector after the call.
 */
-long sum(vector_iterator* it);
+long sum(vector_iterator it);
 
 // 3p
 // +2p: use iterators instead of directly accessing lhs->elems and rhs->elems 
